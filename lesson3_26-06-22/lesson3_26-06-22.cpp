@@ -17,7 +17,7 @@ public:
     void insert(int value, int position);
     void del(int position);
     int operator[] (int index);
-    int indexOf(int value);
+    void shou();
 };
 
 MyList::MyList()
@@ -122,11 +122,36 @@ int MyList::operator[](int index)
     return currentNode->value;
 }
 
+void MyList::shou()
+{
+    Node* currentNode = firstNode;
+    for (int i = 0; i < length; i++) {
+        cout << currentNode->value << ' ';
+        currentNode = currentNode->nexNode;
+        
+    }
+    cout << endl;
+}
+
 
 
 int main()
 {
     
+    MyList list = MyList();
+    list.add(5);
+    list.shou();
+    list.add(60);
+    list.add(2);
+    list.add(10);
+    list.add(56);
+    list.add(99);
+    
+    list.shou();
+    list.insert(100, 3);
+    list.shou();
+    list.del(5);
+    list.shou();
 
 }
 
