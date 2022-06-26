@@ -23,6 +23,7 @@ public:
 MyList::MyList()
 {
     firstNode = nullptr;
+    lastNode = nullptr;
     length = 0;
 }
 
@@ -33,7 +34,8 @@ int MyList::getLenght() {
 void MyList::add(int value) {
     if (length == 0) {
         firstNode = new Node();
-        firstNode->value = value;        
+        firstNode->value = value;
+        lastNode = firstNode;
     }
     else {
         Node* temp = lastNode;
@@ -150,7 +152,7 @@ int main()
     list.shou();
     list.insert(100, 3);
     list.shou();
-    list.del(5);
+    list.del(4);
     list.shou();
 
 }
